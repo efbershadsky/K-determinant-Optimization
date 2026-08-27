@@ -1,0 +1,99 @@
+This method performs computation of molecular energy. Method is based on the minimization of the energy
+ across wave functions which can be represented as a sum of exactly k determinants.
+As an imput method requires basis set data- namely, overlap matrix, kinetic energy matrix,nuclear attraction matrix and ERI tensor.
+Energy of nuclear repulsion also should be pre-computed.
+This data must be obtained via other software- for example, using PyQint or PySCF.
+
+Usage examples #1 and #2 use PyQint software. 
+Usage examples #3 and #4 allow to reproduce results presented in the paper. Input data required for the computations is stored in the folders "oxygen atom" and "water molecule".
+
+
+#Usage example 1
+#import packages
+import q_phys
+from pyqint import PyQInt, Molecule
+#initialize molecule and basis set using PyQint
+mol = Molecule()
+integrator = PyQInt()
+mol.add_atom('C', 0.0, 0.0, 0.0)
+#6-31G basis set
+cgfs, nuclei = mol.build_basis('p631')
+#calculate integrals using PyQint
+S, T, V, eri = integrator.build_integrals_openmp(cgfs, nuclei)
+#calculate energy of nuclear repulsion
+E_nuc_rep=q_phys.calculate_nuclear_repulsion(nuclei)
+#input molecular parameters
+#number of electrons
+n_electrons=6
+#spin multiplicity
+multiplicity=3
+#random seed
+rseed=42
+#number of determinants
+k=2
+#run energy optimisation procedure using q_phys
+E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+
+#Usage example 2
+#import packages
+import q_phys
+rseed=42
+from pyqint import PyQInt, Molecule
+#initialize molecule and basis set using PyQint
+mol = Molecule()
+integrator = PyQInt()
+#bohr radius
+a0=0.529177210544
+#experimantal geometry
+mol.add_atom('O', 0.0, 0.0, 0.0)
+mol.add_atom('H', 0.7572/a0, 0.5865/a0, 0.0)
+mol.add_atom('H', -0.7572/a0, 0.5865/a0, 0.0)
+#6-31G basis set
+cgfs, nuclei = mol.build_basis('p631')
+#calculate integrals using PyQint
+S, T, V, eri = integrator.build_integrals_openmp(cgfs, nuclei)
+#calculate energy of nuclear repulsion
+E_nuc_rep=q_phys.calculate_nuclear_repulsion(nuclei)
+#input molecular parameters
+#number of electrons
+n_electrons=10
+#spin multiplicity
+multiplicity=1
+#number of determinants
+k=2
+#run energy optimisation procedure using q_phys
+E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+
+#Usage example3 (6-31G* calculations for oxygen atom)
+import q_phys
+import numpy as np
+rseed=42
+#download data from the folder "oxygen atom"
+T=np.load('oxigen_kin.npy')
+V=np.load('oxigen_pot.npy')
+S=np.load('oxigen_overlap.npy')
+eri=np.load('oxigen_eri.npy')
+#
+n_electrons=8
+multiplicity=3
+k=5
+E_nuc_rep=0
+E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+
+
+#Usage example4 (6-31G* calculations for water molecule)
+import q_phys
+import numpy as np
+rseed=42
+#download data from the folder "water molecule"
+T=np.load('water_kin.npy')
+V=np.load('water_pot.npy')
+S=np.load('water_overlap.npy')
+eri=np.load('water_eri.npy')
+E_nuc_rep_arr=np.load('water_E_nuc_rep.npy')
+E_nuc_rep=E_nuc_rep_arr[0]
+#
+n_electrons=10
+multiplicity=1
+k=1
+E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
