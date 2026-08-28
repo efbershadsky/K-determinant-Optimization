@@ -1,4 +1,4 @@
-##In this usage example molecular integrals are calculated with PyQInt (https://github.com/ifilot/pyqint).
+#In this usage example molecular integrals are calculated with PyQInt (https://github.com/ifilot/pyqint).
 #import packages
 import k_det
 from pyqint import PyQInt, Molecule
