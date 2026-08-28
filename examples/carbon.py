@@ -21,5 +21,5 @@ multiplicity=3
 rseed=42
 #number of determinants
 k=2
-#run energy optimisation procedure using q_phys
+#run energy optimisation procedure using k_det
 E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
