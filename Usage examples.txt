@@ -31,7 +31,7 @@ multiplicity=3
 rseed=42
 #number of determinants
 k=2
-#run energy optimisation procedure using q_phys
+#run energy optimisation procedure using Python script for K-determinant optimisation
 E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
 
 #Usage example 2
@@ -61,7 +61,7 @@ n_electrons=10
 multiplicity=1
 #number of determinants
 k=2
-#run energy optimisation procedure using q_phys
+#run energy optimisation procedure using Python script for K-determinant optimisation
 E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
 
 #Usage example3 (6-31G* calculations for oxygen atom)
