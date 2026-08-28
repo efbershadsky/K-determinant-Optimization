@@ -1,4 +1,4 @@
-#Usage example 2
+##In the usage example molecular integrals are calculated with PyQInt (https://github.com/ifilot/pyqint).
 #import packages
 import k_det
 rseed=42
