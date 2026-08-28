@@ -13,7 +13,7 @@ mol.add_atom('H', 0.7572/a0, 0.5865/a0, 0.0)
 mol.add_atom('H', -0.7572/a0, 0.5865/a0, 0.0)
 #6-31G basis set
 cgfs, nuclei = mol.build_basis('p631')
-#calculate integrals using PyQint
+#calculate molecular integrals using PyQint
 S, T, V, eri = integrator.build_integrals_openmp(cgfs, nuclei)
 #calculate energy of nuclear repulsion
 E_nuc_rep=k_det.calculate_nuclear_repulsion(nuclei)
