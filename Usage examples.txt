@@ -2,7 +2,7 @@ This method performs computation of molecular energy. Method is based on the min
  across wave functions which can be represented as a sum of exactly k determinants.
 As an input method requires computation of molecular integrals- namely, overlap matrix, kinetic energy matrix,nuclear attraction matrix and ERI tensor.
 Energy of nuclear repulsion also should be pre-computed.
-This data must be obtained via other software- for example, using PyQint or PySCF.
+This data must be obtained using other software- for example, using PyQint or PySCF.
 
 The molecular integrals used in the examples #1 and #2 are calculated with PyQInt (https://github.com/ifilot/pyqint).
 Usage examples #3 and #4 allow to reproduce results presented in the paper. Input data required for the computations is stored in the folders "oxygen atom" and "water molecule".
