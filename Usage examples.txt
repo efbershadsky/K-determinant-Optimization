@@ -4,7 +4,7 @@ As an imput method requires basis set data- namely, overlap matrix, kinetic ener
 Energy of nuclear repulsion also should be pre-computed.
 This data must be obtained via other software- for example, using PyQint or PySCF.
 
-Usage examples #1 and #2 use PyQint software. 
+The molecular integrals used in the examples #1 and #2 are calculated with PyQInt.
 Usage examples #3 and #4 allow to reproduce results presented in the paper. Input data required for the computations is stored in the folders "oxygen atom" and "water molecule".
 
 
