@@ -1,6 +1,6 @@
 This method performs computation of molecular energy. Method is based on the minimization of the energy
  across wave functions which can be represented as a sum of exactly k determinants.
-As an imput method requires basis set data- namely, overlap matrix, kinetic energy matrix,nuclear attraction matrix and ERI tensor.
+As an input method requires computation of molecular integrals- namely, overlap matrix, kinetic energy matrix,nuclear attraction matrix and ERI tensor.
 Energy of nuclear repulsion also should be pre-computed.
 This data must be obtained via other software- for example, using PyQint or PySCF.
 
