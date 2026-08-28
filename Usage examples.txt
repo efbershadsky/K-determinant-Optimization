@@ -4,7 +4,7 @@ As an input method requires computation of molecular integrals- namely, overlap 
 Energy of nuclear repulsion also should be pre-computed.
 This data must be obtained using other software- for example, PyQint or PySCF.
 
-The molecular integrals used in the examples #1 and #2 are calculated with PyQInt (https://github.com/ifilot/pyqint).
+In the usage examples #1 and #2 molecular integrals are calculated with PyQInt (https://github.com/ifilot/pyqint).
 Usage examples #3 and #4 allow to reproduce results presented in the paper. Input data required for the computations is stored in the folders "oxygen atom" and "water molecule".
 
 
