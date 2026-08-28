@@ -1,7 +1,6 @@
 ##In the usage example molecular integrals are calculated with PyQInt (https://github.com/ifilot/pyqint).
 #import packages
 import k_det
-rseed=42
 from pyqint import PyQInt, Molecule
 #initialize molecule and basis set using PyQint
 mol = Molecule()
@@ -23,6 +22,8 @@ E_nuc_rep=k_det.calculate_nuclear_repulsion(nuclei)
 n_electrons=10
 #spin multiplicity
 multiplicity=1
+#random seed
+rseed=42
 #number of determinants
 k=2
 #run energy optimisation procedure using q_phys
