@@ -10,7 +10,7 @@ Usage examples #3 and #4 allow to reproduce results presented in the paper. Inpu
 
 #Usage example 1
 #import packages
-import q_phys
+import k_det
 from pyqint import PyQInt, Molecule
 #initialize molecule and basis set using PyQint
 mol = Molecule()
@@ -21,7 +21,7 @@ cgfs, nuclei = mol.build_basis('p631')
 #calculate integrals using PyQint
 S, T, V, eri = integrator.build_integrals_openmp(cgfs, nuclei)
 #calculate energy of nuclear repulsion
-E_nuc_rep=q_phys.calculate_nuclear_repulsion(nuclei)
+E_nuc_rep=k_det.calculate_nuclear_repulsion(nuclei)
 #input molecular parameters
 #number of electrons
 n_electrons=6
@@ -32,11 +32,11 @@ rseed=42
 #number of determinants
 k=2
 #run energy optimisation procedure using Python script for K-determinant optimisation
-E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
 
 #Usage example 2
 #import packages
-import q_phys
+import k_det
 rseed=42
 from pyqint import PyQInt, Molecule
 #initialize molecule and basis set using PyQint
@@ -53,7 +53,7 @@ cgfs, nuclei = mol.build_basis('p631')
 #calculate integrals using PyQint
 S, T, V, eri = integrator.build_integrals_openmp(cgfs, nuclei)
 #calculate energy of nuclear repulsion
-E_nuc_rep=q_phys.calculate_nuclear_repulsion(nuclei)
+E_nuc_rep=k_det.calculate_nuclear_repulsion(nuclei)
 #input molecular parameters
 #number of electrons
 n_electrons=10
@@ -62,10 +62,10 @@ multiplicity=1
 #number of determinants
 k=2
 #run energy optimisation procedure using Python script for K-determinant optimisation
-E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
 
 #Usage example3 (6-31G* calculations for oxygen atom)
-import q_phys
+import k_det
 import numpy as np
 rseed=42
 #download data from the folder "oxygen atom"
@@ -78,11 +78,11 @@ n_electrons=8
 multiplicity=3
 k=5
 E_nuc_rep=0
-E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
 
 
 #Usage example4 (6-31G* calculations for water molecule)
-import q_phys
+import k_det
 import numpy as np
 rseed=42
 #download data from the folder "water molecule"
@@ -96,4 +96,4 @@ E_nuc_rep=E_nuc_rep_arr[0]
 n_electrons=10
 multiplicity=1
 k=1
-E,psi,data=q_phys.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
+E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
