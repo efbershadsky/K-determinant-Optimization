@@ -11,6 +11,7 @@ eri=np.load('oxigen_eri.npy')
 #
 n_electrons=8
 multiplicity=3
+#number of determinants
 k=2
 E_nuc_rep=0
 E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
