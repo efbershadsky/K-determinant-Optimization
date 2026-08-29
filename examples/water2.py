@@ -2,6 +2,7 @@
 #This usage example uses pre-computed molecular integrals from the folder "water molecule"
 import k_det
 import numpy as np
+#random seed
 rseed=42
 #download data from the folder "water molecule"
 T=np.load('water_kin.npy')
