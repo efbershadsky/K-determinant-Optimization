@@ -10,7 +10,8 @@ S=np.load('water_overlap.npy')
 eri=np.load('water_eri.npy')
 E_nuc_rep_arr=np.load('water_E_nuc_rep.npy')
 E_nuc_rep=E_nuc_rep_arr[0]
-#
+#input molecular parameters
+#number of electrons
 n_electrons=10
 multiplicity=1
 #number of determinants
