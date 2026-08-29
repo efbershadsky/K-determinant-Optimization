@@ -8,7 +8,8 @@ T=np.load('oxigen_kin.npy')
 V=np.load('oxigen_pot.npy')
 S=np.load('oxigen_overlap.npy')
 eri=np.load('oxigen_eri.npy')
-#
+#input molecular parameters
+#number of electrons
 n_electrons=8
 multiplicity=3
 #number of determinants
