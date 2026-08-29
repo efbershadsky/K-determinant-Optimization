@@ -11,6 +11,7 @@ eri=np.load('oxigen_eri.npy')
 #input molecular parameters
 #number of electrons
 n_electrons=8
+#spin multiplicity
 multiplicity=3
 #number of determinants
 k=2
