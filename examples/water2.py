@@ -13,6 +13,7 @@ E_nuc_rep=E_nuc_rep_arr[0]
 #input molecular parameters
 #number of electrons
 n_electrons=10
+#spin multiplicity
 multiplicity=1
 #number of determinants
 k=2
