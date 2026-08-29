@@ -1,3 +1,4 @@
+#6-31G calculations for the water molecule
 #In this usage example molecular integrals are calculated with PyQInt (https://github.com/ifilot/pyqint).
 #import packages
 import k_det
