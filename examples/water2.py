@@ -4,7 +4,7 @@ import k_det
 import numpy as np
 #random seed
 rseed=42
-#download data from the folder "water molecule"
+#download molecular integrals from the folder "water molecule"
 T=np.load('water_kin.npy')
 V=np.load('water_pot.npy')
 S=np.load('water_overlap.npy')
