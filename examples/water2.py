@@ -1,4 +1,5 @@
-#6-31G* calculations for water molecule
+#6-31G* calculations for the water molecule
+#This usage example uses pre-computed molecular integrals from the folder "water molecule"
 import k_det
 import numpy as np
 rseed=42
