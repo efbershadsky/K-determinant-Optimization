@@ -13,5 +13,5 @@ E_nuc_rep=E_nuc_rep_arr[0]
 #
 n_electrons=10
 multiplicity=1
-k=1
+k=2
 E,psi,data=k_det.optimize_molecular_energy(n_electrons,multiplicity,k,S,T,V,eri,E_nuc_rep,rseed)
