@@ -4,7 +4,7 @@ import k_det
 import numpy as np
 #random seed
 rseed=42
-#download data from the folder "oxygen atom"
+#download molecular integrals from the folder "oxygen atom"
 T=np.load('oxigen_kin.npy')
 V=np.load('oxigen_pot.npy')
 S=np.load('oxigen_overlap.npy')
