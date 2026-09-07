@@ -16,5 +16,5 @@ Python script for K-determinant optimisation.
 Uses NumPy and SciPy libraries.
 It was tested using Python 3.9.8, NumPy 1.24.1 and Scipy 1.13.1
 
-folder "examples"
+Folder "examples"
 Description of 4 examples of molecular energy minimization using different systems and different approaches to compute required input data (molecular integrals).
