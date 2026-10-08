@@ -1,22 +1,3 @@
 # K-determinant-optimization
 This project describes a new ab initio quantum chemistry method.
-
-Folder "oxygen atom":
-This folder contains ERI tensor (oxygen_eri.npy), kinetic (oxygen_kin.npy), nuclear attraction (oxygen_pot.npy) and overlap (oxygen_overlap.npy) matrices for the oxygen atom in 6-31G* basis set.
-It also contains basis set data (basis_set_oxygen.txt).
-It also contains wave functions and energies obtained via K-determinant optimisation with K=1..30 with random seed rseed=42.
-For example, oxygen5_psi.npy is the wave function obtained via optimisation with K=5 determinants.
-
-Folder "water molecule": 
-This folder contains ERI tensor (water_eri.npy), kinetic (water_kin.npy), nuclear attraction (water_pot.npy) and overlap (water_overlap.npy) matrices for the water molecule in 6-31G* basis set.
-It also contains energy of nuclear repulsion (water_E_nuc_rep.npy) and basis set data (basis_set_water.txt).
-It also contains wave functions and energies obtained via K-determinant optimisation with K=1..30 with random seed rseed=42.
-For example, water5_psi.npy is the wave function obtained via optimisation with K=5 determinants.
-
-k_det.py:
-Python script for K-determinant optimisation.
-Uses NumPy and SciPy libraries.
-It was tested using Python 3.9.8, NumPy 1.24.1 and Scipy 1.13.1
-
-Folder "examples":
-Description of 4 examples of molecular energy minimization using different systems and different approaches to compute required input data (molecular integrals).
+This project is part of the paper "K-determinant optimization: a new ab initio quantum chemistry method".
